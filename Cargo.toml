@@ -1,0 +1,34 @@
+[package]
+edition = "2021"
+name = "broadcast"
+version = "0.1.0"
+
+[build-dependencies]
+tonic-build = { version = "0.12", features = ["prost"] }
+
+[dependencies]
+anyhow = "1.0"
+async-stream = "0.3.5"
+chrono = "0.4"
+config = "0.14"
+dotenv = "0.15"
+fred = { version = "9.1", features = [
+    "i-std",
+    "i-keys",
+    "i-pubsub",
+    "i-tracking",
+    "full-tracing",
+    "subscriber-client",
+] }
+hashbrown = "0.14"
+prost = "0.13"
+prost-types = "0.13"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.39", features = ["macros", "rt-multi-thread", "signal"] }
+tokio-stream = "0.1"
+tokio-util = { version = "0.7", features = ["time"] }
+tonic = { version = "0.12", features = ["default", "tls"] }
+tower-http = { version = "0.5", features = ["trace"] }
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = ["tracing-log", "fmt"] }
+bytes = "1.7"
